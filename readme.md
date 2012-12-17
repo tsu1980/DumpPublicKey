@@ -9,6 +9,14 @@
 
 ###2. Paste public key(output of 1.) to \omaha\net\cup_pubkey.3.h
 
+###3. Modify omaha code
+
+\omaha\base\security\rsa.cc
+
+    //#define MOD(i) (mod[2 + 2*(i)] + mod[1 + 2*(i)])  // +mod[1+2*(i)] to deobscure
+    #define MOD(i) mod[2 + 2*(i)]
+
+
 #Reference
 
 - [http://code.google.com/p/omaha/](http://code.google.com/p/omaha/)
